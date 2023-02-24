@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','MasyarakatController@index')->name('masyarakat.index');
 Route::get('/register','Auth\\RegisterController@RegisterFormMasyarakat');
+Route::post('/register/store','Auth\\RegisterController@RegisterMasyarakat')->name('masyarakat.register');
 
 
 Route::get('/login','Auth\\LoginController@FormLoginMasyarakat');

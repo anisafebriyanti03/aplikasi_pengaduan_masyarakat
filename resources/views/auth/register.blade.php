@@ -7,10 +7,14 @@
     <div class="row d-flex justify-content-center align-items-center h-400">
       <div class="col-12 col-md-8 col-lg-6 col-xl-7">
         <div class="card shadow-2-strong" style="border-radius: 1rem;">
-            <form action="{{route('masyarakat.login')}}" method="POST">
+            <form action="{{route('masyarakat.register')}}" method="POST">
                 @csrf
             <div class="card-body p-4">
-
+                @if($messege = Session::get('success'))
+                    <div class="alert alert-success">
+                        {{ $messege }}
+                    </div>
+                @endif
                 <h3 class="mb-4 text-center">Register</h3>
                 <div class="row">
                     <div class="col-md">
@@ -49,7 +53,7 @@
                     <div class="col-md">
                         <div class="form-outline mb-2">
                         <label class="form-label">Username</label>
-                        <input type="email" name="username" class="form-control"  placeholder="Username"/>
+                        <input type="text" name="username" class="form-control"  placeholder="Username"/>
                         </div>
                     </div>
 
@@ -72,7 +76,13 @@
                     <div class="col-md">
                         <div class="form-outline mb-2">
                         <label class="form-label">Provinsi</label>
-                        <input type="text" name="province_id" class="form-control"/>
+                        <!-- <input type="text" name="province_id" class="form-control"/> -->
+                        <select name="province_id" class="form-control">
+                                <option selected>Pilih provinsi..</option>
+                                    @foreach($provinces as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -89,7 +99,13 @@
                     <div class="col-md">
                         <div class="form-outline mb-2">
                         <label class="form-label">Kabupaten</label>
-                        <input type="text" name="regency_id" class="form-control"/>
+                        <!-- <input type="text" name="regency_id" class="form-control"/> -->
+                        <select name="regency_id" class="form-control">
+                            <option selected>Pilih Kabupaten..</option>
+                                @foreach($regencies as $item)
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                @endforeach
+                        </select>
                         </div>
                     </div>
                 </div>
@@ -104,8 +120,14 @@
 
                     <div class="col-md">
                         <div class="form-outline mb-2">
-                        <label class="form-label">Distrik</label>
-                        <input type="text" name="district_id" class="form-control"/>
+                        <label class="form-label">Kecamatan</label>
+                        <!-- <input type="text" name="district_id" class="form-control"/> -->
+                        <select name="district_id" class="form-control">
+                            <option selected>Pilih Kecamatan..</option>
+                                @foreach($districts as $item)
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                @endforeach
+                        </select>
                         </div>
                     </div>
                 </div>
@@ -127,7 +149,13 @@
                     <div class="col-md">
                         <div class="form-outline mb-2">
                         <label class="form-label">Desa</label>
-                        <input type="text" name="village_id" class="form-control"/>
+                        <!-- <input type="text" name="village_id" class="form-control"/> -->
+                        <select name="village_id" class="form-control">
+                            <option selected>Pilih Desa..</option>
+                                @foreach($villages as $item)
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                @endforeach
+                        </select>
                         </div>
                     </div>
                 </div>
@@ -142,7 +170,7 @@
 
                 <!-- Checkbox -->
                 
-                <button class="btn btn-primary text-center " type="submit">Login</button>
+                <button class="btn btn-primary text-center" type="submit">Login</button>
             
             </div>
             </form>
