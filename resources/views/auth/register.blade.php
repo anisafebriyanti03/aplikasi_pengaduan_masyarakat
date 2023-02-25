@@ -170,7 +170,7 @@
 
                 <!-- Checkbox -->
                 
-                <button class="btn btn-primary text-center" type="submit">Login</button>
+                <button class="btn btn-primary text-center" type="submit">Register</button>
             
             </div>
             </form>

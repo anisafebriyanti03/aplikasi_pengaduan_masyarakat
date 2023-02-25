@@ -15,6 +15,10 @@ class Masyarakat
      */
     public function handle($request, Closure $next)
     {
+        if(!Auth()->guard('masyarakat')->check())
+        {
+            return redirect()->to('/login');
+        }
         return $next($request);
     }
 }

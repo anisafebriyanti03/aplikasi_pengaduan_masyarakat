@@ -17,11 +17,16 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+
 Route::get('/','MasyarakatController@index')->name('masyarakat.index');
+
+//Login
 Route::get('/register','Auth\\RegisterController@RegisterFormMasyarakat');
-Route::post('/register/store','Auth\\RegisterController@RegisterMasyarakat')->name('masyarakat.register');
+Route::post('register/store','Auth\\RegisterController@RegisterMasyarakat')->name('masyarakat.register');
+Route::get('login','Auth\\LoginController@FormLoginMasyarakat');
+Route::post('login','Auth\\LoginController@LoginMasyarakat')->name('masyarakat.login');
 
-
-Route::get('/login','Auth\\LoginController@FormLoginMasyarakat');
-Route::post('/login','Auth\\LoginController@LoginMasyarakat')->name('masyarakat.login');
+Route::middleware('masyarakat')->group(function(){
+    Route::get('/pengaduan','MasyarakatController@formPengaduan');
+});
 

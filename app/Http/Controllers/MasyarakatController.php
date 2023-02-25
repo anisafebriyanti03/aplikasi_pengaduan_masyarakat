@@ -10,4 +10,9 @@ class MasyarakatController extends Controller
     {
         return view('index');
     }
+
+    public function formPengaduan()
+    {
+        return view('form-pengaduan');
+    }
 }
