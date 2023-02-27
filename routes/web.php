@@ -28,5 +28,14 @@ Route::post('login','Auth\\LoginController@LoginMasyarakat')->name('masyarakat.l
 
 Route::middleware('masyarakat')->group(function(){
     Route::get('/pengaduan','MasyarakatController@formPengaduan');
+    Route::post('/pengaduan/simpan','MasyarakatController@simpanPengaduan')->name('masyarakat.pengaduan');
+    Route::get('/laporanku','MasyarakatController@laporanku');
 });
+
+Route::get('/pengaduan1', 'PengaduanController@index')->name('pengaduan');
+Route::get('/pengaduan/create', 'PengaduanController@create');
+Route::post('/pengaduan/store', 'PengaduanController@store');
+Route::get('/pengaduan/edit/{id}', 'PengaduanController@edit');
+Route::put('/pengaduan/update/{id}', 'PengaduanController@update');
+Route::get('/pengaduan/delete/{id}', 'PengaduanController@delete');
 

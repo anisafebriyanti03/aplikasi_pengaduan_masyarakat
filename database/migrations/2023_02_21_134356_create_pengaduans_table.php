@@ -16,7 +16,8 @@ class CreatePengaduansTable extends Migration
         Schema::create('pengaduans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->date('tgl_pengaduan');
-            $table->unsignedBigInteger('masyarakat_nik')->references('nik')->on('masyarakats');
+            $table->unsignedBigInteger('masyarakat_nik')->references('id')->on('masyarakats');
+            $table->string('foto');
             $table->string('isi_laporan');
             $table->enum('status', [0,'proses','selesai']);
             $table->timestamps();

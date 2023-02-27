@@ -31,4 +31,11 @@ class Masyarakat extends Authenticatable
     protected $hidden = "password";
 
     protected $guard ="masyarakat";
+
+    public $incrementing = false;
+
+    public function pengaduans()
+    {
+    	return $this->hasMany('App\Pengaduan');
+    }
 }

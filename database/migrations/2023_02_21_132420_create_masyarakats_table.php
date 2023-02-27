@@ -17,7 +17,7 @@ class CreateMasyarakatsTable extends Migration
             $table->integer('nik')->unique();
             $table->primary('nik');
             $table->string('nama');
-            $table->string('username');
+            $table->string('username')->unique();
             $table->string('email');
             $table->string('password');
             $table->char('telp', 12);

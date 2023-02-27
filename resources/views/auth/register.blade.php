@@ -169,9 +169,14 @@
                 
 
                 <!-- Checkbox -->
-                
-                <button class="btn btn-primary text-center" type="submit">Register</button>
-            
+                <div class="form-group">
+                    <button class="btn btn-primary form-control text-center" type="submit">Registrasi</button>
+                </div>
+                <hr>
+                <div class="form-group text-center">
+                    <a class="" href="/login">Login</a>
+                </div>
+                        
             </div>
             </form>
         </div>
