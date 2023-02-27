@@ -17,7 +17,7 @@ class MasyarakatController extends Controller
         return view('form-pengaduan');
     }
 
-    public function simpanPengaduan(Request $request){
+    public function simpanPengaduan(){
         // $masyarakat = Masyarakat::all();
         $data_pengaduan = Pengaduan::create(request()->all());
         return redirect()->to('/');

@@ -17,7 +17,7 @@
                     <br/>
                     <br/>
                     
-                    <form method="post" action="/pengaduan/store">
+                    <form method="post" action="/pengaduan/store" enctype="multipart/form-data">
  
                         {{ csrf_field() }}
  
@@ -67,19 +67,6 @@
                                 </div>
                             @endif
  
-                        </div>
-
-                        <div class="form-group">
-                            <label>Status</label>
-                            <input type="radio" name="status" value="0"> 0
-                            <input type="radio" name="status" value="proses"> Proses
-                            <input type="radio" name="status" value="selesai"> Selesai
-
-                            @if($errors->has('foto'))
-                                <div class="text-danger">
-                                    {{ $errors->first('foto')}}
-                                </div>
-                            @endif
                         </div>
  
                         <div class="form-group">

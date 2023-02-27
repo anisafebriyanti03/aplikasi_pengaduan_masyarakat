@@ -10,10 +10,10 @@
           <a class="nav-link" href="/pengaduan">Buat Laporan</a>
           
             <li class="nav-item dropdown">
-              <a class="nav-link active" aria-current="page" href="#">Namaku</a>
-              <div class="dropdown-menu">
-                  <a href="/laporanku" class="dropdown-item">Laporanku</a>
-                  <a href="#" class="dropdown-item">Logout</a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Namaku</a>
+              <div div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a href="/laporanku" class="nav-link dropdown-item">Laporanku</a>
+                  <a href="#" class="nav-link dropdown-item">Logout</a>
               </div>
             </li>
            @if(!Auth()->guard('masyarakat')->check())
