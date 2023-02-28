@@ -26,6 +26,9 @@ Route::post('register/store','Auth\\RegisterController@RegisterMasyarakat')->nam
 Route::get('login','Auth\\LoginController@FormLoginMasyarakat');
 Route::post('login','Auth\\LoginController@LoginMasyarakat')->name('masyarakat.login');
 
+
+Route::post('getkabupaten','Auth\\RegisterController@getkabupaten')->name('getkabupaten');
+
 Route::middleware('masyarakat')->group(function(){
     Route::get('/pengaduan','MasyarakatController@formPengaduan');
     Route::post('/pengaduan/simpan','MasyarakatController@simpanPengaduan')->name('masyarakat.pengaduan');

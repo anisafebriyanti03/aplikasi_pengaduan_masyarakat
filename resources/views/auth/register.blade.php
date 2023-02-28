@@ -77,7 +77,7 @@
                         <div class="form-outline mb-2">
                         <label class="form-label">Provinsi</label>
                         <!-- <input type="text" name="province_id" class="form-control"/> -->
-                        <select name="province_id" class="form-control">
+                        <select id="provinsi" class="form-control">
                                 <option selected>Pilih provinsi..</option>
                                     @foreach($provinces as $item)
                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -100,7 +100,7 @@
                         <div class="form-outline mb-2">
                         <label class="form-label">Kabupaten</label>
                         <!-- <input type="text" name="regency_id" class="form-control"/> -->
-                        <select name="regency_id" class="form-control">
+                        <select name="regency_id" id="kabupaten" class="form-control">
                             <option selected>Pilih Kabupaten..</option>
                                 @foreach($regencies as $item)
                                     <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -122,7 +122,7 @@
                         <div class="form-outline mb-2">
                         <label class="form-label">Kecamatan</label>
                         <!-- <input type="text" name="district_id" class="form-control"/> -->
-                        <select name="district_id" class="form-control">
+                        <select name="district_id" id="kecamatan" class="form-control">
                             <option selected>Pilih Kecamatan..</option>
                                 @foreach($districts as $item)
                                     <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -150,7 +150,7 @@
                         <div class="form-outline mb-2">
                         <label class="form-label">Desa</label>
                         <!-- <input type="text" name="village_id" class="form-control"/> -->
-                        <select name="village_id" class="form-control">
+                        <select name="village_id" id="desa" class="form-control">
                             <option selected>Pilih Desa..</option>
                                 @foreach($villages as $item)
                                     <option value="{{ $item->id }}">{{ $item->name }}</option>
