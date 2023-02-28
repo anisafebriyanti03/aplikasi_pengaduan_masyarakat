@@ -35,7 +35,7 @@
                         
                         <div class="form-group">
                             <label>Nama</label>
-                            <input type="text" name="masyarakat_nik" class="form-control" placeholder="Nama Pengadu ..">
+                            <input type="text" name="masyarakat_nik" class="form-control" placeholder="Nama ..">
  
                             @if($errors->has('masyarakat_nik'))
                                 <div class="text-danger">
@@ -47,7 +47,7 @@
  
                         <div class="form-group">
                             <label>Laporan</label>
-                            <textarea name="isi_laporan" class="form-control" placeholder="isi laporan .."></textarea>
+                            <textarea name="isi_laporan" class="form-control" rows=5 placeholder="isi laporan .."></textarea>
  
                              @if($errors->has('isi_laporan'))
                                 <div class="text-danger">
@@ -147,7 +147,7 @@
                                         {{ $errors->first('foto')}}
                                     </div>
                                 @endif
-                            </div>
+                            </div> 
 
                             <div class="form-group">
                                <button type="submit" class="btn btn-primary form-control">Laporkan</button>

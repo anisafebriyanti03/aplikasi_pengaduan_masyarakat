@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tanggapan;
 
 class TanggapanController extends Controller
 {
@@ -13,7 +14,8 @@ class TanggapanController extends Controller
      */
     public function index()
     {
-        //
+        $tanggapan = Tanggapan::all();
+        return view('tanggapan.index', compact('tanggapan'));
     }
 
     /**
@@ -23,7 +25,7 @@ class TanggapanController extends Controller
      */
     public function create()
     {
-        //
+        return view('tanggapan.create');
     }
 
     /**
@@ -34,7 +36,21 @@ class TanggapanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'pengaduan_id' => 'required',
+    		'tgl_tanggapan' => 'required',
+            'tanggapan' => 'required',
+            'petugas_id' => 'required'
+    	]);
+ 
+        Tanggapan::create([
+            'pengaduan_id' => $request->pengaduan_id,
+    		'tgl_tanggapan' => $request->tgl_tanggapan,
+            'tanggapan' => $request->tanggapan,
+            'petugas_id' => $request->petugas_id,
+    	]);
+ 
+    	return redirect('/tanggapan');
     }
 
     /**
@@ -56,7 +72,8 @@ class TanggapanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tanggapan = Tanggapan::where('id',$id)->first();
+        return view('tanggapan.edit', compact('tanggapan'));
     }
 
     /**
@@ -68,7 +85,21 @@ class TanggapanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'pengaduan_id' => 'required',
+    		'tgl_tanggapan' => 'required',
+            'tanggapan' => 'required',
+            'petugas_id' => 'required'
+    	]);
+ 
+        Tanggapan::where('id', $id)->update([
+            'pengaduan_id' => $request->pengaduan_id,
+    		'tgl_tanggapan' => $request->tgl_tanggapan,
+            'tanggapan' => $request->tanggapan,
+            'petugas_id' => $request->petugas_id,
+    	]);
+ 
+    	return redirect('/tanggapan');
     }
 
     /**
@@ -77,8 +108,9 @@ class TanggapanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+        Tanggapan::where('id',$id)->delete();
+        return redirect('/tanggapan');
     }
 }

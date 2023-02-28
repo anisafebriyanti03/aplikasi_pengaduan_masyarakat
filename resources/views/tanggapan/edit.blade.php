@@ -10,62 +10,62 @@
         <div class="container">
             <div class="card mt-5">
                 <div class="card-header text-center">
-                    Ubah Pengaduan
+                    Ubah Tanggapan
                 </div>
                 <div class="card-body">
-                    <a href="/pengaduan" class="btn btn-primary">Kembali</a>
+                    <a href="/tanggapan" class="btn btn-primary">Kembali</a>
                     <br/>
                     <br/>
                     
  
-                    <form method="post" action="/pengaduan/update/{{ $pengaduan->id }}">
+                    <form method="post" action="/tanggapan/update/{{ $tanggapan->id }}">
  
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}
- 
-                        <div class="form-group">
-                            <label>Tanggal Pengaduan</label>
-                            <input type="date" name="tgl_pengaduan" class="form-control" placeholder="Tanggal Pengaduan pengaduan .." value="{{ $pengaduan->tgl_pengaduan }}">
- 
-                            @if($errors->has('tgl_pengaduan'))
-                                <div class="text-danger">
-                                    {{ $errors->first('tgl_pengaduan')}}
-                                </div>
-                            @endif
- 
-                        </div>
 
                         <div class="form-group">
-                            <label>Nama</label>
-                            <input type="text" name="masyarakat_nik" class="form-control" placeholder="nama pengaduan .." value="{{ $pengaduan->masyarakat_nik }}">
+                            <label>Pengadu</label>
+                            <input type="text" name="pengaduan_id" class="form-control" placeholder="pengadu .." value="{{ $tanggapan->pengaduan_id }}">
  
-                            @if($errors->has('masyarakat_nik'))
+                            @if($errors->has('pengaduan_id'))
                                 <div class="text-danger">
-                                    {{ $errors->first('masyarakat_nik')}}
+                                    {{ $errors->first('pengaduan_id')}}
                                 </div>
                             @endif
  
                         </div>
  
                         <div class="form-group">
-                            <label>Laporan</label>
-                            <textarea name="isi_laporan" class="form-control" placeholder="isi laporan pengaduan ..">{{ $pengaduan->isi_laporan }}</textarea>
+                            <label>Tanggal tanggapan</label>
+                            <input type="date" name="tgl_tanggapan" class="form-control" placeholder="Tanggal tanggapan .." value="{{ $tanggapan->tgl_tanggapan }}">
  
-                             @if($errors->has('isi_laporan'))
+                            @if($errors->has('tgl_tanggapan'))
                                 <div class="text-danger">
-                                    {{ $errors->first('isi_laporan')}}
+                                    {{ $errors->first('tgl_tanggapan')}}
                                 </div>
                             @endif
  
                         </div>
-
-                        <div class="form-group">
-                            <label>Foto</label>
-                            <input type="file" name="foto" class="form-control" value="{{ $pengaduan->foto }}">
  
-                            @if($errors->has('foto'))
+                        <div class="form-group">
+                            <label>Tanggapan</label>
+                            <textarea name="tanggapan" class="form-control" placeholder="isi tanggapan ..">{{ $tanggapan->tanggapan }}</textarea>
+ 
+                             @if($errors->has('tanggapan'))
                                 <div class="text-danger">
-                                    {{ $errors->first('foto')}}
+                                    {{ $errors->first('tanggapan')}}
+                                </div>
+                            @endif
+ 
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Petugas</label>
+                            <input type="text" name="petugas_id" class="form-control" placeholder="petugas .." value="{{ $tanggapan->petugas_id }}">
+ 
+                            @if($errors->has('petugas_id'))
+                                <div class="text-danger">
+                                    {{ $errors->first('petugas_id')}}
                                 </div>
                             @endif
  

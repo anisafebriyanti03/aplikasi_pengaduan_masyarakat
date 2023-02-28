@@ -32,10 +32,17 @@ Route::middleware('masyarakat')->group(function(){
     Route::get('/laporanku','MasyarakatController@laporanku');
 });
 
-Route::get('/pengaduan1', 'PengaduanController@index')->name('pengaduan');
+Route::get('/pengaduan/index', 'PengaduanController@index')->name('pengaduan');
 Route::get('/pengaduan/create', 'PengaduanController@create');
 Route::post('/pengaduan/store', 'PengaduanController@store');
 Route::get('/pengaduan/edit/{id}', 'PengaduanController@edit');
 Route::put('/pengaduan/update/{id}', 'PengaduanController@update');
 Route::get('/pengaduan/delete/{id}', 'PengaduanController@delete');
+
+Route::get('/tanggapan', 'TanggapanController@index')->name('tanggapan');
+Route::get('/tanggapan/create', 'TanggapanController@create');
+Route::post('/tanggapan/store', 'TanggapanController@store');
+Route::get('/tanggapan/edit/{id}', 'TanggapanController@edit');
+Route::put('/tanggapan/update/{id}', 'TanggapanController@update');
+Route::get('/tanggapan/delete/{id}', 'TanggapanController@delete');
 
