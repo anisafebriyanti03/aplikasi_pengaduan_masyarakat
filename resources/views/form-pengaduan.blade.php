@@ -34,8 +34,12 @@
                                 <label for="foto">Foto</label>
                                 <input type="file" name="foto" class="form-control">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                <button type="submit" class="btn btn-primary form-control">Laporkan</button>
+                            </div>
+
+                            <div class="form-group mt-3">
+                               <a href="#" class="btn btn-primary form-control">Laporanku</a>
                             </div>
                         </form>
                     </div>

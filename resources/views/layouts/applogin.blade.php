@@ -16,7 +16,7 @@
 
 <!-- script -->
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script>
+    <!-- <script>
         $(function() {
             $.ajaxSetup({
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
@@ -46,5 +46,5 @@
                 })
             });
         });
-    </script>
+    </script> -->
 </html>

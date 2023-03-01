@@ -21,16 +21,16 @@ class RegisterController extends Controller
         return view('auth.register', compact('provinces','regencies','districts','villages'));
     }
 
-    public function getkabupaten(request $request)
-    {
-        $id_provinsi = $request->id_provinsi;
+    // public function getkabupaten(request $request)
+    // {
+    //     $id_provinsi = $request->id_provinsi;
 
-        $kabupatens = Regency::where('province_id', $id_provinsi)->get();
+    //     $kabupatens = Regency::where('province_id', $id_provinsi)->get();
 
-        foreach($kabupatens as $kabupaten){
-            echo "<option value='$kabupaten->id'>$kabupaten->name</option>";
-        }
-    } 
+    //     foreach($kabupatens as $kabupaten){
+    //         echo "<option value='$kabupaten->id'>$kabupaten->name</option>";
+    //     }
+    // } 
 
     public function RegisterMasyarakat()
     {

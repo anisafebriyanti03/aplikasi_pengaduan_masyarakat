@@ -32,7 +32,8 @@
                                 <td>{{ $p->tgl_pengaduan }}</td>
                                 <td>{{ $p->masyarakat_nik }}</td>
                                 <td>{{ $p->isi_laporan }}</td>
-                                <td><img src="{{ asset('image/'. $p->foto ) }}" height="50%" width="50%" alt=""></td>
+                                <!-- <td><img src="{{ asset('image/'. $p->foto ) }}" height="50%" width="50%" alt=""></td> -->
+                                <td><img src="{{ asset($p->foto) }}" height="50%" width="50%" alt=""></td>
                                 <td>
                                     <a href="/pengaduan/edit/{{ $p->id }}" class="btn btn-warning">Edit</a>
                                     <a href="/pengaduan/show/{{ $p->id }}" class="btn btn-success">detail</a>

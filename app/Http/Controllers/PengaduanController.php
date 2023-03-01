@@ -44,6 +44,8 @@ class PengaduanController extends Controller
             'status' => 'required'
     	]);
 
+        $upload_image = $request->foto->storage('image');
+
         // $imgName = $request->foto->getClientOriginalName() . '-' . time() . '.' . $request->foto->extension();
         // $request->foto->move(public_path('image'), $imgName);
  
@@ -51,8 +53,8 @@ class PengaduanController extends Controller
     		'tgl_pengaduan' => $request->tgl_pengaduan,
     		'masyarakat_nik' => $request->masyarakat_nik,
             'isi_laporan' => $request->isi_laporan,
-            // 'foto' => $imgName,
-            'foto' => $request->foto,
+            'foto' => $upload_image,
+            // 'foto' => $request->foto,
             'status' => $request->status,
     	]);
  
@@ -67,7 +69,8 @@ class PengaduanController extends Controller
      */
     public function show($id)
     {
-        //
+        $pengaduan = Pengaduan::where('id',$id)->first();
+        return view('pengaduan.show', compact('pengaduan'));
     }
 
     /**
